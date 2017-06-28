@@ -107,6 +107,23 @@ let g:airline#extensions#tabline#enabled=1
 " Enable air-line colors in Putty on Windows
 set t_Co=256
 
+" Airline plugin config
+" show status bar
+set laststatus=2
+" If the powerline font symbols are not showing up, 
+" Need to install powerline-fonts from https://github.com/powerline/fonts.git
+" Then go to preference page of Terminal and set font to any power line fonts
+" i.e. inconsolata
+let g:airline_powerline_fonts = 1
+"set encoding=utf-8
+"Set AirLine Theme
+let g:airline_theme='bubblegum'
+
+"Enable Smarter tab line
+let g:airline#extensions#tabline#enabled=1 
+
+"set t_Co=256
+
 " Show cursorline
 set cursorline
 
