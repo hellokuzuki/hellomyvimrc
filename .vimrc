@@ -79,6 +79,9 @@ set t_Co=256
 set cursorline
 
 " Color Scheme
-colorscheme molokai
+let g:solarized_termcolors=256
+colorscheme solarized
+"colorscheme molokai 
 
 "set encoding=utf-8
+"link
