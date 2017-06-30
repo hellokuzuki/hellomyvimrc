@@ -83,5 +83,66 @@ let g:solarized_termcolors=256
 colorscheme solarized
 "colorscheme molokai 
 
-"set encoding=utf-8
-"link
+" No backup files
+set nobackup
+
+" No write backup
+set nowritebackup
+
+" No swap file
+set noswapfile
+
+" Show incomplete commadns
+set showcmd
+
+" Incremental searching
+set incsearch
+
+" Ignore case in search
+set smartcase
+
+" Make sure any searches /searchPhrase doesn't need the \c escape character
+set ignorecase
+
+" Convert tabs to spaces
+set expandtab
+
+" Set tab size in spaces (this is for manual indenting)
+set tabstop=4
+
+" The number of spaces inserted for a tab (used for auto indenting)
+set shiftwidth=4
+
+" Highlight tailing whitespace
+set list listchars=tab:\ \ ,trail:·
+
+" Get rid of the delay when pressing O (for example)
+" http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" UTF encoding
+set encoding=utf-8
+
+" Autoload files that have changed outside of vim
+set autoread
+
+" Better splits (new windows appear below and to the right)
+set splitbelow
+set splitright
+
+" Ensure Vim doesn't beep at you every time you make a mistype
+set visualbell
+
+" Visual autocomplete for command menu (e.g. :e ~/path/to/file)
+set wildmenu
+
+" Redraw only when we need to (i.e. don't redraw when executing a macro)
+set lazyredraw
+
+" Highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+
+" <C-x><C-k> for word autocomplete
+set dictionary=/usr/share/dict/words
+
+
