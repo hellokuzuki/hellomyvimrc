@@ -23,8 +23,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 " Incsearch tool
 "Plugin 'haya14busa/incsearch.vim'
 
-" nerdtree filesystem view
-"Plugin 'scrooloose/nerdtree'
+" File Browsing nerdtree filesystem view
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " vim airline theme
 Plugin 'vim-airline/vim-airline'
@@ -32,6 +33,25 @@ Plugin 'vim-airline/vim-airline-themes'
 
 "vim color schemes
 Plugin 'flazz/vim-colorschemes'
+
+" Simple Fold
+Plugin 'tmhedberg/SimpylFold'
+
+" Auto indentation
+Plugin 'vim-scripts/indentpython.vim'
+
+" You complete me
+" After installed YouCompleteMe plugin,
+" mac : brew install cmake, then go to YouCompleteMe folder
+" ./install.py --clang-completer
+Plugin 'Valloric/YouCompleteMe'
+
+" Syntax Checking/Highlighting
+Plugin 'scrooloose/syntastic'
+
+" Super Searching
+Plugin 'kien/ctrlp.vim'
+
 
 " ======== PLUGINS END ========
 
@@ -63,14 +83,13 @@ set laststatus=2
         " Need to install powerline-fonts from https://github.com/powerline/fonts.git
         " Then go to preference page of Terminal and set font to any power line fonts
         " i.e. inconsolata
-let g:airline_powerline_fonts = 1
-
+let g:airline_powerline_fonts=1
 
     " AirLine Theme setting
 let g:airline_theme='bubblegum'
 
     " Enable Smarter tab line
-let g:airline#extensions#tabline#enabled=1 
+let g:airline#extensions#tabline#enabled=1
 
 " Enable air-line colors in Putty on Windows
 set t_Co=256
@@ -80,8 +99,14 @@ set cursorline
 
 " Color Scheme
 let g:solarized_termcolors=256
-colorscheme solarized
-"colorscheme molokai 
+" colorscheme solarized
+"colorscheme molokai
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme molokai
+endif
 
 " No backup files
 set nobackup
@@ -144,5 +169,56 @@ set showmatch
 
 " <C-x><C-k> for word autocomplete
 set dictionary=/usr/share/dict/words
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding by za
+set foldmethod=indent
+set foldlevel=99
+
+"Simple fold: enable docstring preview in fold text
+let g:SimpylFold_docstring_preview = 1
+
+"add the proper PEP8 indentation for python
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.py set tabstop=2
+au BufNewFile,BufRead *.py set softtabstop=2
+au BufNewFile,BufRead *.py set shiftwidth=2
+
+" YouCompleteMe customizations
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let python_highlight_all=1
+
+" Ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" System clipboard
+set clipboard=unnamed
+
+
 
 
