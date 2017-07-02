@@ -219,6 +219,30 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " System clipboard
 set clipboard=unnamed
 
+" Ignore some folders and files for CtrlP indexing
+" Toggle CrtlP =>  Ctrl + P
+" Open a file in a new tap => Ctrl + t 
+"
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
+" Key Mapping
+let mapleader=','
 
+" NERDTree Toggle
+" nmap <leader>ne :NERDTree<cr>
+map <leader>n :NERDTreeTabsToggle<cr>
 
+" CtrlP toggle
+map <leader>p :CtrlP<cr>
+
+" Split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enter command mode by ; or :
+nnoremap ; :
