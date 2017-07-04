@@ -247,7 +247,11 @@ nnoremap <C-H> <C-W><C-H>
 " Enter command mode by ; or :
 nnoremap ; :
 
-" Buffer switching
+" Buffer Switching
 nnoremap <leader>b :bp<cr>
 nnoremap <leader>f :bn<cr>
 nnoremap <leader>g :e#<cr>
+
+" Tab Switching
+nnoremap tj :tabnext<cr>
+nnoremap tk :tabprev<cr>
