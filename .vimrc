@@ -206,7 +206,10 @@ let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " System clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
+if $TMUX == ''
+        set clipboard+=unnamed
+endif
 
 " Ignore some folders and files for CtrlP indexing
 " Toggle CrtlP =>  Ctrl + P
