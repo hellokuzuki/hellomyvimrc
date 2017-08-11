@@ -254,3 +254,6 @@ nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
 map <C-S-Tab> :tabprevious<CR>
 map <C-Tab> :tabnext<CR>
+
+"Set belloff
+set belloff=all
