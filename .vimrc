@@ -257,3 +257,7 @@ map <C-Tab> :tabnext<CR>
 
 "Set belloff
 set belloff=all
+
+"Set Mouse Mode to On in order to do paste from clipboard by Shift + Right
+"Click
+set mouse=a
