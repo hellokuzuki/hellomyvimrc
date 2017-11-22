@@ -10,6 +10,7 @@ printf " ** 0. Copy bashrc to home directory"
 sudo cp .bashrc  "$HOME/.bashrc"
 sudo cp .vimrc "$HOME.vimrc"
 sudo cp .tmux.conf "$HOME/.tmux.conf"
+sudo cp .zshrc "$HOME/.zshrc"
 echo ""
 
 printf " ** 1. Cloning Vundle Plugin ..."
