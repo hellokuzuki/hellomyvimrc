@@ -6,6 +6,12 @@ NC='\033[0m'
 VUN_DIR="$HOME/.vim/bundle/Vundle.vim"
 FONTS_DIR="$HOME/.vim/bundle/fonts"
 
+printf " ** 0. Copy bashrc to home directory"
+sudo cp .bashrc  "$HOME/.bashrc"
+sudo cp .vimrc "$HOME.vimrc"
+sudo cp .tmux.conf "$HOME/.tmux.conf"
+echo ""
+
 printf " ** 1. Cloning Vundle Plugin ..."
 if [ "$(ls -A $VUN_DIR)" ]; then
 	echo " Vundle.vim is already exists!"
@@ -25,5 +31,4 @@ cd $HOME/.vim/bundle/fonts
 cd ..
 rm -rf fonts
 printf " ** 2. Powerline Fonts installed!"!
-
 
